@@ -141,9 +141,14 @@ module.exports = class cryptopia extends Exchange {
                 'min': market['MinimumPrice'],
                 'max': market['MaximumPrice'],
             };
+            let costLimits = {
+                'min': market['MinimumBaseTrade'],
+                'max': market['MaximumBaseTrade'],
+            };
             let limits = {
                 'amount': amountLimits,
                 'price': priceLimits,
+                'cost': costLimits,
             };
             let active = market['Status'] === 'OK';
             result.push ({
